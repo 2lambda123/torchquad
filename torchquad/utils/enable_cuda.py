@@ -7,13 +7,13 @@ from .set_precision import set_precision
 logger = logging.getLogger(__name__)
 
 
-def enable_cuda(device=0, data_type="float"):
+def enable_cuda(device=0, data_type="complex32"):
     """This function will set the default device to CUDA if possible. Call before declaring any variables!
     The default precision can be set here initially, or using set_precision later.
 
     Args:
         device (int, optional): CUDA device to use. Defaults to 0.
-        data_type (string, optional): Data type to use, either "float" or "double". Defaults to "float".
+        data_type (string, optional): Data type to use, either "float", "double", "complex32", or "complex64". Defaults to "complex32".
 
     """
     if torch.cuda.is_available():
